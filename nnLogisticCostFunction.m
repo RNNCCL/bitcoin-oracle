@@ -64,13 +64,18 @@ Theta2_grad = zeros(size(Theta2));
 
 
 
-
-
 % Generate Y in format [0 1 0 0 0 0 0 0 0 0; ....]
-Y = zeros(m,num_labels);
-for i = 1:m,
-	Y(i,y(i)) = 1;
+if(num_labels == 1),
+	Y = y;
+else
+	Y = zeros(m,num_labels);
+	for i = 1:m,
+		Y(i,y(i)) = 1;
+	end
 end
+
+
+
 
 
 %  output_layer_costs(example,label)
@@ -83,7 +88,9 @@ for i = 1:m,
 	% FORWARD PROPAGATION for example i
 	% Layer 1
 	% size 401x1
+
 	a1 = [1 X(i,:)];
+	
 
 	% Layer 2
 	% size 1x26

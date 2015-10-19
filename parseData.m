@@ -1,10 +1,9 @@
 % parseData(priCols) convert bitstampUSD.csv to matrix X (consecutive priCols prices and amounts) 
 % and vector y (the price just after those consecutive prices)
 
-function [X,y] = parseData(priCols)
+function [X,y] = parseData(data, priCols)
 
 t = cputime;
-data = load('bitstampUSD-test.csv');
 
 [m n] = size(data);
 
