@@ -4,7 +4,7 @@
 function [X,y] = parseData(priCols)
 
 t = cputime;
-data = load('bitstampUSD.csv');
+data = load('bitstampUSD-test.csv');
 
 [m n] = size(data);
 
