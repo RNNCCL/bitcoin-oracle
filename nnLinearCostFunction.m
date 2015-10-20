@@ -123,14 +123,14 @@ for i = 1:m,
 	
 	% size(((delta_3(i,:)*Theta2).*(a2.*(1-a2)))') 26x1
 
-	% TODO linear backpropagation
-	delta_2_temp = ((delta_3(i,:)*Theta2))';
+	delta_2_temp = ((delta_3(i,:)*Theta2).*a2)';
 
 	% remove bias element
 	delta_2_temp(1,:) = [];
 
 	% size(delta_2(i,:)) 25x1
-	delta_2(i,:) = delta_2_temp;
+	delta_2(i,:) = ((delta_3(i,:)*Theta2))';;
+
 
 	
 	DELTA_1 = DELTA_1 + delta_2(i,:)'*a1;
