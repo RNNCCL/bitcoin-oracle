@@ -3,7 +3,7 @@
 
 function [X,y] = parseData(data, priCols)
 
-t = cputime;
+% t = cputime;
 
 % data = flipud(data);
 
@@ -61,7 +61,7 @@ end
 
 
 
-printf('Data parsed in in %f seconds\n',cputime-t);
+% printf('Data parsed in in %f seconds\n',cputime-t);
 
 
 end
