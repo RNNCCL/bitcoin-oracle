@@ -32,7 +32,7 @@ to = 0.75;
 num_labels = 1;
 [m n] = size(X);
 n0 = n;
-for i=1:(6*60*8)),
+for i=1:(6*60*8),
 	t = cputime;
 	printf('Training %d...\n',i);
 	[m n] = size(X);
