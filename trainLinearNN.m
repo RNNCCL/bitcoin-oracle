@@ -1,7 +1,7 @@
 % Load data
 clear all
 % data from https://www.quandl.com/data/BCHARTS/BITSTAMPUSD-Bitcoin-Markets-bitstampUSD
-% http://bitcoincharts.com/charts/bitstampUSD#rg730zig6-hourza1gEMAzm1g1za2gEMAzm2g25zv
+
 data = load('bitstamp-6hours-open-high-low-close-volumeBtc-volumeUsd-weightedPrice.csv');
 
 
@@ -21,7 +21,7 @@ data = load('bitstamp-6hours-open-high-low-close-volumeBtc-volumeUsd-weightedPri
 [m n] = size(X);
 
 hidden_layer_size = 30;
-lambda = 0.1;
+lambda = 0.5;
 
 from = 0.25;
 to = 0.75;

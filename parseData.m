@@ -37,19 +37,19 @@ for i=1:m-priCols,
 	ex = [ex deltaClosePrice];
 
 	volumeBtc = data(i:i+priCols-1,5)';
-	ex = [ex volumeBtc];
+	% ex = [ex volumeBtc];
 	deltaVolumeBtc = getDeltas(volumeBtc);
 	ex = [ex deltaVolumeBtc];
 
 	volumeUsd = data(i:i+priCols-1,6)';
-	ex = [ex volumeUsd];
+	% ex = [ex volumeUsd];
 	deltaVolumeUsd = getDeltas(volumeUsd);
-	ex = [ex deltaVolumeUsd];
+	% ex = [ex deltaVolumeUsd];
 
 	weightedPrice = data(i:i+priCols-1,7)';
-	ex = [ex weightedPrice];
+	% ex = [ex weightedPrice];
 	deltaWeightedPrice = getDeltas(weightedPrice);
-	ex = [ex deltaWeightedPrice];
+	% ex = [ex deltaWeightedPrice];
 
 	
 
