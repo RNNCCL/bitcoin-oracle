@@ -32,6 +32,7 @@ to = 0.75;
 num_labels = 1;
 [m n] = size(X);
 n0 = n;
+
 for i=1:(6*60*8),
 	t = cputime;
 	printf('Training %d...\n',i);
@@ -76,6 +77,7 @@ for i=1:(6*60*8),
 	err = mean(double((pred - y).^2));
 	fprintf('\nTraining Error: %f (%f seconds)\n', err,cputime-t);
 	if(err < bestError),
+		bestError = err;
 		save bestfit.mat Theta1 Theta2 X X_max X_min from to y_max y_min;
 		printf('best fit saved!\n');
 	end
