@@ -1,4 +1,4 @@
-function checkNNLogisticGradients(lambda)
+function checkNNGradients(lambda)
 %CHECKNNGRADIENTS Creates a small neural network to check the
 %backpropagation gradients
 %   CHECKNNGRADIENTS(lambda) Creates a small neural network to check the
@@ -28,7 +28,7 @@ y  = 1 + mod(1:m, num_labels)';
 nn_params = [Theta1(:) ; Theta2(:)];
 
 % Short hand for cost function
-costFunc = @(p) nnLogisticCostFunction(p, input_layer_size, hidden_layer_size, ...
+costFunc = @(p) nnCostFunction(p, input_layer_size, hidden_layer_size, ...
                                num_labels, X, y, lambda);
 
 [cost, grad] = costFunc(nn_params);

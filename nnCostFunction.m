@@ -1,4 +1,4 @@
-function [J grad] = nnLogisticCostFunction(nn_params, ...
+function [J grad] = nnCostFunction(nn_params, ...
                                    input_layer_size, ...
                                    hidden_layer_size, ...
                                    num_labels, ...
@@ -64,7 +64,10 @@ Theta2_grad = zeros(size(Theta2));
 
 
 
+
+
 % Generate Y in format [0 1 0 0 0 0 0 0 0 0; ....]
+
 if(num_labels == 1),
 	Y = y;
 else
@@ -73,8 +76,6 @@ else
 		Y(i,y(i)) = 1;
 	end
 end
-
-
 
 
 
@@ -88,9 +89,7 @@ for i = 1:m,
 	% FORWARD PROPAGATION for example i
 	% Layer 1
 	% size 401x1
-
 	a1 = [1 X(i,:)];
-	
 
 	% Layer 2
 	% size 1x26
@@ -167,4 +166,6 @@ Theta2_grad = (1/m)*DELTA_2 + (lambda/m)*theta2_temp;
 
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
+
+
 end
